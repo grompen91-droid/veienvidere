@@ -1,0 +1,7 @@
+﻿services:
+  bedrifts-backend:
+    image: bedrifts-backend
+    build:
+      context: .
+      dockerfile: Bedrifts-backend/Dockerfile
+
