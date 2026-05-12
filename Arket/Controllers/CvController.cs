@@ -12,7 +12,7 @@ public class CvController : ControllerBase
     private readonly AppDbContext _context;
     private readonly CvPdfService _cvPdfService;
 
-    public CvController(
+    public CvController( 
         AppDbContext context,
         CvPdfService cvPdfService)
     {
