@@ -13,7 +13,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseDefaultFiles();
+var defaultFilesOptions = new DefaultFilesOptions();
+defaultFilesOptions.DefaultFileNames.Clear();
+defaultFilesOptions.DefaultFileNames.Add("home.html");
+app.UseDefaultFiles(defaultFilesOptions);
 app.UseStaticFiles();
 
 var summaries = new[]
