@@ -38,7 +38,45 @@ public class AuthController : ControllerBase
     [HttpGet("users")] 
     public async Task<IActionResult> GetUsers() 
     { 
-        var users = await _context.Users.ToListAsync();
+        var users = await _context.Users
+            .Select(x => new UserResponseDto
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Email = x.Email,
+                PhoneNumber = x.PhoneNumber
+            })
+            .ToListAsync();
         return Ok(users); 
+    }
+    
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginDto dto)
+    {
+        var user = await _context.Users
+            .FirstOrDefaultAsync(x => x.Email == dto.Email);
+
+        if (user == null)
+        {
+            return Unauthorized("Invalid email or password");
+        }
+
+        var passwordValid = BCrypt.Net.BCrypt.Verify(
+            dto.Password,
+            user.PasswordHash);
+
+        if (!passwordValid)
+        {
+            return Unauthorized("Invalid email or password");
+        }
+
+        return Ok(new
+        {
+            user.Id,
+            user.FirstName,
+            user.LastName,
+            user.Email
+        });
     }
 }

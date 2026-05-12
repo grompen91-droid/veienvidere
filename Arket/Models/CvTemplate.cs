@@ -1,6 +1,10 @@
 namespace Arket.Models;
 
-public class CvTemplate
+
+public enum CvTemplate
 {
-    
+    Modern,
+    Minimal,
+    Professional
 }
+
