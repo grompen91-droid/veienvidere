@@ -1,4 +1,4 @@
-namespace Bedrifts_backend.Helpers;
+namespace Arket.Helpers;
 
 public class JwtHelper
 {

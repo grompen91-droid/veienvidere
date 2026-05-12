@@ -1,4 +1,4 @@
-namespace Bedrifts_backend.Models;
+namespace Arket.Models;
 
 public class CvTemplate
 {

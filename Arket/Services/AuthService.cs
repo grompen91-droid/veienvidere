@@ -1,4 +1,4 @@
-namespace Bedrifts_backend.Services;
+namespace Arket.Services;
 
 public class AuthService
 {
