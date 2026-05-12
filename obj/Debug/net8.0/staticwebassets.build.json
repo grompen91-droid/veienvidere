@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "C4fTrvM6PBaSj4U2YgNdYlQ6S6lHg45WzviUgFTxceA=",
+  "Source": "veienvidere",
+  "BasePath": "_content/veienvidere",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "veienvidere/wwwroot",
+      "Source": "veienvidere",
+      "ContentRoot": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/",
+      "BasePath": "_content/veienvidere",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/css/style.css",
+      "SourceId": "veienvidere",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/",
+      "BasePath": "_content/veienvidere",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/style.css"
+    },
+    {
+      "Identity": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/index.html",
+      "SourceId": "veienvidere",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/",
+      "BasePath": "_content/veienvidere",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/js/app.js",
+      "SourceId": "veienvidere",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/",
+      "BasePath": "_content/veienvidere",
+      "RelativePath": "js/app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/app.js"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV side</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="cv">
+
+    <header class="steps-bar">
+        <div class="steps">
+            <div class="step">1</div>
+            <span class="arrow">
+                <svg viewBox="0 0 70.5 28.8675" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2.5 11.9338C1.11929 11.9338 0 13.053 0 14.4338C0 15.8145 1.11929 16.9338 2.5 16.9338V14.4338V11.9338ZM70.5 14.4338L45.5 0V28.8675L70.5 14.4338ZM2.5 14.4338V16.9338H48V14.4338V11.9338H2.5V14.4338Z" fill="white"/>
+                </svg>
+            </span>
+            <div class="step">2</div>
+            <span class="arrow">
+                <svg viewBox="0 0 70.5 28.8675" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2.5 11.9338C1.11929 11.9338 0 13.053 0 14.4338C0 15.8145 1.11929 16.9338 2.5 16.9338V14.4338V11.9338ZM70.5 14.4338L45.5 0V28.8675L70.5 14.4338ZM2.5 14.4338V16.9338H48V14.4338V11.9338H2.5V14.4338Z" fill="white"/>
+                </svg>
+            </span>
+            <div class="step">3</div>
+            <span class="arrow">
+                <svg viewBox="0 0 70.5 28.8675" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2.5 11.9338C1.11929 11.9338 0 13.053 0 14.4338C0 15.8145 1.11929 16.9338 2.5 16.9338V14.4338V11.9338ZM70.5 14.4338L45.5 0V28.8675L70.5 14.4338ZM2.5 14.4338V16.9338H48V14.4338V11.9338H2.5V14.4338Z" fill="white"/>
+                </svg>
+            </span>
+            <div class="step">4</div>
+            <span class="arrow">
+                <svg viewBox="0 0 70.5 28.8675" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2.5 11.9338C1.11929 11.9338 0 13.053 0 14.4338C0 15.8145 1.11929 16.9338 2.5 16.9338V14.4338V11.9338ZM70.5 14.4338L45.5 0V28.8675L70.5 14.4338ZM2.5 14.4338V16.9338H48V14.4338V11.9338H2.5V14.4338Z" fill="white"/>
+                </svg>
+            </span>
+            <div class="step">5</div>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <main class="content">
+
+        <form id="cvForm" class="form" onsubmit="send(); return false;">
+
+            <div class="form-head">
+                <p class="form-title">CV Form</p>
+                <p class="form-hint">Fill out form for the cv.</p>
+            </div>
+
+            <div class="fields">
+                <div class="field-col">
+                    <label class="field" for="fullName">
+                        <span class="field-label">Full Name</span>
+                        <input id="fullName" name="fullName" class="field-input" type="text" placeholder="Jane Doe">
+                    </label>
+                    <label class="field" for="languages">
+                        <span class="field-label">Languages</span>
+                        <input id="languages" name="languages" class="field-input" type="text" placeholder="English, Norwegian, Spanish">
+                    </label>
+                    <label class="field" for="skills">
+                        <span class="field-label">Skills</span>
+                        <input id="skills" name="skills" class="field-input" type="text" placeholder="JavaScript, C#, SQL">
+                    </label>
+                </div>
+                <div class="field-col">
+                    <label class="field" for="email">
+                        <span class="field-label">Email</span>
+                        <input id="email" name="email" class="field-input" type="email" placeholder="jane.doe@example.com">
+                    </label>
+                    <label class="field" for="phone">
+                        <span class="field-label">Phone Number</span>
+                        <input id="phone" name="phone" class="field-input" type="tel" placeholder="+47 123 45 678">
+                    </label>
+                    <label class="field" for="education">
+                        <span class="field-label">Education</span>
+                        <input id="education" name="education" class="field-input" type="text" placeholder="BSc Computer Science, University of Oslo">
+                    </label>
+                </div>
+            </div>
+
+            <label class="field field--note" for="additionalInfo">
+                <span class="field-label">Additional Information</span>
+                <input id="additionalInfo" name="additionalInfo" class="field-input field-input--filled" type="text" placeholder="Brief summary about yourself">
+            </label>
+
+            <p class="form-status" id="result"></p>
+
+        </form>
+
+        <button class="nav-btn nav-btn--prev" type="button" aria-label="Previous">
+            <svg viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="154" height="154" rx="77" fill="white" stroke="#008774" stroke-width="7"/>
+                <path d="M116.5 83.5C118.157 83.5 119.5 82.1569 119.5 80.5C119.5 78.8431 118.157 77.5 116.5 77.5V80.5V83.5ZM44.5 80.5L74.5 97.8205V63.1795L44.5 80.5ZM116.5 80.5V77.5H71.5V80.5V83.5H116.5V80.5Z" fill="#008774"/>
+            </svg>
+        </button>
+
+        <button class="nav-btn nav-btn--next" type="submit" form="cvForm" aria-label="Next">
+            <svg viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="154" height="154" rx="77" fill="white" stroke="#008774" stroke-width="7"/>
+                <path d="M44.5 77.5C42.8431 77.5 41.5 78.8431 41.5 80.5C41.5 82.1568 42.8431 83.5 44.5 83.5L44.5 80.5L44.5 77.5ZM116.5 80.5L86.5 63.1795L86.5 97.8205L116.5 80.5ZM44.5 80.5L44.5 83.5L89.5 83.5L89.5 80.5L89.5 77.5L44.5 77.5L44.5 80.5Z" fill="#008774"/>
+            </svg>
+        </button>
+
+    </main>
+
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
