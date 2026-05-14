@@ -3,12 +3,16 @@ using Arket.DTOs;
 using Arket.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Arket.Helpers;
+using Microsoft.AspNetCore.Authorization;
+
 namespace Arket.Controllers;
 [ApiController]
 [Route("api/auth")]
 public class AuthController : ControllerBase
 {
     private readonly AppDbContext _context;
+    private readonly JwtHelper _jwtHelper;
     public AuthController(AppDbContext context)
     {
         _context = context;
@@ -36,6 +40,7 @@ public class AuthController : ControllerBase
     }
     
     [HttpGet("users")] 
+    [Authorize]
     public async Task<IActionResult> GetUsers() 
     { 
         var users = await _context.Users
@@ -58,25 +63,28 @@ public class AuthController : ControllerBase
             .FirstOrDefaultAsync(x => x.Email == dto.Email);
 
         if (user == null)
-        {
             return Unauthorized("Invalid email or password");
-        }
 
-        var passwordValid = BCrypt.Net.BCrypt.Verify(
-            dto.Password,
-            user.PasswordHash);
+        var passwordValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
 
         if (!passwordValid)
-        {
             return Unauthorized("Invalid email or password");
-        }
+
+        var token = _jwtHelper.GenerateToken(user); // ← теперь возвращаем токен
 
         return Ok(new
         {
+            token,
             user.Id,
             user.FirstName,
             user.LastName,
             user.Email
         });
+    }
+
+    public AuthController(AppDbContext context, JwtHelper jwtHelper)
+    {
+        _context = context;
+        _jwtHelper = jwtHelper;
     }
 }

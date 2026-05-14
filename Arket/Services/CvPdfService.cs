@@ -2,15 +2,17 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using Arket.Models;
-
+using Arket.DTOs;
 namespace Arket.Services;
 
 public class CvPdfService
 {
-    public byte[] GenerateCvPdf(User user, string template)
+    public byte[] GenerateCvPdf(User user, string template, GenerateCvDto? dto = null)
     {
         QuestPDF.Settings.License = LicenseType.Community;
-
+        var aboutMe = dto?.AboutMe ?? "Motivated and ambitious backend developer...";
+        var skills = dto?.Skills ?? "C#, ASP.NET Core, PostgreSQL, Docker";
+        var education = dto?.Education ?? "Computer Science Student";
         switch (template.ToLower())
         {
             case "modern":
@@ -25,6 +27,7 @@ public class CvPdfService
             default:
                 return GenerateModernTemplate(user);
         }
+        
     }
 
     private byte[] GenerateModernTemplate(User user)
