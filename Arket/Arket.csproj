@@ -14,18 +14,17 @@
         <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
         <PackageReference Include="EntityFramework" Version="6.6.0-preview1-final" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.8" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.OpenApi" Version="2.4.1" />
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.22" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
         <PackageReference Include="QuestPDF" Version="2026.5.0" />
         <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="2.1.11" />
         <PackageReference Include="SqlLiteProcessor" Version="1.0.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
     </ItemGroup>
 
     <ItemGroup>

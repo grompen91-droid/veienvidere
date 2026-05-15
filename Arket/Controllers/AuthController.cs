@@ -13,10 +13,13 @@ public class AuthController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly JwtHelper _jwtHelper;
-    public AuthController(AppDbContext context)
+    
+    public AuthController(AppDbContext context, JwtHelper jwtHelper)
     {
         _context = context;
+        _jwtHelper = jwtHelper;
     }
+    
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterDto dto)
     {
@@ -70,7 +73,7 @@ public class AuthController : ControllerBase
         if (!passwordValid)
             return Unauthorized("Invalid email or password");
 
-        var token = _jwtHelper.GenerateToken(user); // ← теперь возвращаем токен
+        var token = _jwtHelper.GenerateToken(user);
 
         return Ok(new
         {
@@ -80,11 +83,5 @@ public class AuthController : ControllerBase
             user.LastName,
             user.Email
         });
-    }
-
-    public AuthController(AppDbContext context, JwtHelper jwtHelper)
-    {
-        _context = context;
-        _jwtHelper = jwtHelper;
     }
 }

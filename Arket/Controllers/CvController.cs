@@ -1,9 +1,9 @@
 using Arket.Data;
+using Arket.DTOs;
 using Arket.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Arket.DTOs;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Arket.Controllers;
 
@@ -14,9 +14,7 @@ public class CvController : ControllerBase
     private readonly AppDbContext _context;
     private readonly CvPdfService _cvPdfService;
 
-    public CvController( 
-        AppDbContext context,
-        CvPdfService cvPdfService)
+    public CvController(AppDbContext context, CvPdfService cvPdfService)
     {
         _context = context;
         _cvPdfService = cvPdfService;
@@ -26,8 +24,7 @@ public class CvController : ControllerBase
     [Authorize]
     public async Task<IActionResult> GeneratePdf(
         int userId,
-        [FromQuery] string template = "modern",
-        [FromBody] GenerateCvDto dto = null)
+        [FromBody] GenerateCvDto dto)
     {
         var user = await _context.Users
             .FirstOrDefaultAsync(x => x.Id == userId);
@@ -35,10 +32,8 @@ public class CvController : ControllerBase
         if (user == null)
             return NotFound();
 
-        var pdfBytes = _cvPdfService.GenerateCvPdf(user, template, dto);
+        var pdfBytes = _cvPdfService.GenerateCvPdf(user, dto);
 
-        return File(pdfBytes, "application/pdf", $"cv-{template}.pdf");
+        return File(pdfBytes, "application/pdf", "cv.pdf");
     }
-    
-    
 }
