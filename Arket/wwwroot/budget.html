@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Veienvidere – Budget</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/budget.css">
+</head>
+<body>
+
+<div class="page">
+
+    <header class="brand-bar">
+        <a class="back-btn" href="/home.html">← Back</a>
+        <p class="brand-title">Veienvidere</p>
+        <button class="export-btn" onclick="exportToExcel()">⬇ Export Excel</button>
+    </header>
+
+    <div class="divider"></div>
+
+    <main class="budget-wrap">
+        <h1 class="budget-title">Monthly Budget</h1>
+
+        <!-- INCOME -->
+        <div class="section open" id="s-income">
+            <div class="section-header" onclick="toggle('s-income')">
+                <div class="section-left">
+                    <span class="section-name">YOUR INCOME PER MONTH</span>
+                    <span class="section-total" id="t-income">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Salary</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other income</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- LOANS & RENT -->
+        <div class="section" id="s-loans">
+            <div class="section-header" onclick="toggle('s-loans')">
+                <div class="section-left">
+                    <span class="section-name">LOANS AND RENT</span>
+                    <span class="section-total" id="t-loans">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Housing loan</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Car loan</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Consumption loans</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Student loan</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Leasing</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Rent</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- INSURANCE -->
+        <div class="section" id="s-insurance">
+            <div class="section-header" onclick="toggle('s-insurance')">
+                <div class="section-left">
+                    <span class="section-name">INSURANCE</span>
+                    <span class="section-total" id="t-insurance">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Home insurance</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Car insurance</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Travel insurance</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Life insurance</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- FIXED HOUSING -->
+        <div class="section" id="s-housing">
+            <div class="section-header" onclick="toggle('s-housing')">
+                <div class="section-left">
+                    <span class="section-name">FIXED HOUSING EXPENSES</span>
+                    <span class="section-total" id="t-housing">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Electricity</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Internet</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Phone</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">TV / Streaming</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Water and sewage</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- TRANSPORT -->
+        <div class="section" id="s-transport">
+            <div class="section-header" onclick="toggle('s-transport')">
+                <div class="section-left">
+                    <span class="section-name">TRANSPORT</span>
+                    <span class="section-total" id="t-transport">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Public transport</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Fuel</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Parking</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- HEALTH -->
+        <div class="section" id="s-health">
+            <div class="section-header" onclick="toggle('s-health')">
+                <div class="section-left">
+                    <span class="section-name">HEALTH AND WELL-BEING</span>
+                    <span class="section-total" id="t-health">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Gym / fitness</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Doctor / dentist</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Pharmacy / medicine</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- FOOD -->
+        <div class="section" id="s-food">
+            <div class="section-header" onclick="toggle('s-food')">
+                <div class="section-left">
+                    <span class="section-name">FOOD AND DAILY PRODUCTS</span>
+                    <span class="section-total" id="t-food">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Groceries</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Restaurants / takeaway</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Coffee / snacks</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Alcohol / tobacco</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- CLOTHES -->
+        <div class="section" id="s-clothes">
+            <div class="section-header" onclick="toggle('s-clothes')">
+                <div class="section-left">
+                    <span class="section-name">CLOTHES AND ACCESSORIES</span>
+                    <span class="section-total" id="t-clothes">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Clothing</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Shoes</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Accessories</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- LEISURE -->
+        <div class="section" id="s-leisure">
+            <div class="section-header" onclick="toggle('s-leisure')">
+                <div class="section-left">
+                    <span class="section-name">LEISURE</span>
+                    <span class="section-total" id="t-leisure">0 kr</span>
+                </div>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="field-row"><span class="field-name">Hobbies</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Travel / holidays</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Entertainment</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Gifts / donations</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+                <div class="field-row"><span class="field-name">Other</span><div class="field-input-wrap"><input type="number" min="0" placeholder="0" oninput="recalc()"><span class="unit">kr</span></div></div>
+            </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="summary">
+            <div class="summary-title">Monthly Summary</div>
+            <div class="summary-row">
+                <span>Total income</span>
+                <span class="val" id="sum-income">0 kr</span>
+            </div>
+            <div class="summary-row">
+                <span>Total expenses</span>
+                <span class="val" id="sum-expenses">0 kr</span>
+            </div>
+            <div class="summary-row total" id="sum-row-balance">
+                <span>Balance</span>
+                <span class="val" id="sum-balance">0 kr</span>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="/js/app.js"></script>
+<script src="/js/budget.js"></script>
+
+</body>
+</html>
