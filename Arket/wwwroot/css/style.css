@@ -215,3 +215,38 @@ body {
         flex: 1 1 0;
     }
 }
+
+.cv-actions {
+    position: absolute;
+    bottom: clamp(12px, 2vh, 30px);
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 clamp(12px, 1.5vw, 30px);
+}
+
+.action-btn {
+    width: clamp(120px, 14vw, 220px);
+    height: clamp(50px, 6vw, 70px);
+
+    border: 3px solid #008774;
+    border-radius: 20px;
+
+    background: white;
+    color: #008774;
+
+    font-size: clamp(16px, 1.5vw, 24px);
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background: #008774;
+    color: white;
+}

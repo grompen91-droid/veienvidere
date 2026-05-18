@@ -78,20 +78,16 @@
             <p class="form-status" id="result"></p>
  
         </form>
- 
-        <button class="nav-btn nav-btn--prev" type="button" aria-label="Previous" onclick="history.back()">
-            <svg viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="3.5" y="3.5" width="154" height="154" rx="77" fill="white" stroke="#008774" stroke-width="7"/>
-                <path d="M116.5 83.5C118.157 83.5 119.5 82.1569 119.5 80.5C119.5 78.8431 118.157 77.5 116.5 77.5V80.5V83.5ZM44.5 80.5L74.5 97.8205V63.1795L44.5 80.5ZM116.5 80.5V77.5H71.5V80.5V83.5H116.5V80.5Z" fill="#008774"/>
-            </svg>
-        </button>
- 
-        <button class="nav-btn nav-btn--next" type="button" aria-label="Generate CV" onclick="send()">
-            <svg viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="3.5" y="3.5" width="154" height="154" rx="77" fill="white" stroke="#008774" stroke-width="7"/>
-                <path d="M44.5 77.5C42.8431 77.5 41.5 78.8431 41.5 80.5C41.5 82.1568 42.8431 83.5 44.5 83.5L44.5 80.5L44.5 77.5ZM116.5 80.5L86.5 63.1795L86.5 97.8205L116.5 80.5ZM44.5 80.5L44.5 83.5L89.5 83.5L89.5 80.5L89.5 77.5L44.5 77.5L44.5 80.5Z" fill="#008774"/>
-            </svg>
-        </button>
+
+        <div class="cv-actions">
+            <button class="action-btn" type="button" onclick="history.back()">
+                Back
+            </button>
+
+            <button class="action-btn" type="button" onclick="send()">
+                Export PDF
+            </button>
+        </div>
  
     </main>
  
