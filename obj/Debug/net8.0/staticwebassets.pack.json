@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/assets/bd0fdb0ce60f2f601b2c34d28b76ddfe27637444.svg",
+      "PackagePath": "staticwebassets/assets/bd0fdb0ce60f2f601b2c34d28b76ddfe27637444.svg"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/assets/cf4a8cc601e1ee32235ec7abac3dba02e3b03a1b.svg",
+      "PackagePath": "staticwebassets/assets/cf4a8cc601e1ee32235ec7abac3dba02e3b03a1b.svg"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/css/home.css",
+      "PackagePath": "staticwebassets/css/home.css"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/home.html",
+      "PackagePath": "staticwebassets/home.html"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/kaspernebell/veienvidere/veienvidere/wwwroot/js/app.js",
+      "PackagePath": "staticwebassets/js/app.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.veienvidere.props",
+      "PackagePath": "build\\veienvidere.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.veienvidere.props",
+      "PackagePath": "buildMultiTargeting\\veienvidere.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.veienvidere.props",
+      "PackagePath": "buildTransitive\\veienvidere.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.veienvidere.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
